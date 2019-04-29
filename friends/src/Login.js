@@ -25,7 +25,9 @@ class Login extends React.Component {
                 value={this.state.username} onChange={this.input} /><br/>
                 <input placeholder='password' name='password' type='password' 
                 value={this.state.password} onChange={this.input} /><br/>
-                <button onClick={(e) => this.props.login(e.target)}>Enter My Friends!</button>
+                <button onClick={ () => {this.setState({username:'', password : ''});this.props.login(this.state.username,this.state.password)} } >
+                    Enter My Friends!
+                </button>
             </div>
           )
     }
