@@ -20,15 +20,15 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
+            <form>
                 <input placeholder='username' name='username' type='text' 
                 value={this.state.username} onChange={this.input} /><br/>
                 <input placeholder='password' name='password' type='password' 
                 value={this.state.password} onChange={this.input} /><br/>
-                <button onClick={ () => {this.setState({username:'', password : ''});this.props.login(this.state.username,this.state.password)} } >
+                <button onClick={ (e) => {e.preventDefault(); this.setState({username:'', password : ''}); this.props.login(this.state)} } >
                     Enter My Friends!
                 </button>
-            </div>
+            </form>
           )
     }
 }
